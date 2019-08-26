@@ -1,4 +1,4 @@
-# Time Slice
+# Time Slicer
 
 A Python package for creating timeslice images from time lapses.
 

@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="timeslice",
+    name="timeslicer",
     version="1.0.0",
     author="Nicholas Ramkissoon",
     description="Package for creating timeslice images from time lapses",

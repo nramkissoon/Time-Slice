@@ -59,11 +59,11 @@ def timeslice(image_folder: str, output_path: str, skip=0, reverse=False, random
 if __name__ == '__main__':
     print("Timeslice:")
     direc = input("Enter directory path to photos: ")
-    output = input("Enter path for output timeslice (eg. directory_name/photo.jpg): ")
+    output = input("Enter path for output timeslicer (eg. directory_name/photo.jpg): ")
     s = int(input("Enter skip value (how many photos to skip over when selecting slices): "))
     q = int(input("Enter output quality (1 - 100): "))
 
     print("")
-    print("Creating timeslice...")
+    print("Creating timeslicer...")
     timeslice(direc, output_path=output, skip=s, qual=q)
     print("Finished.")
