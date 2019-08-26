@@ -8,7 +8,7 @@ script for creating a timeslice from the terminal.
 ## Usage
 
 ```commandline
-pip install timeslicer==1.1.0
+pip install timeslicer==1.1.1
 ```
 
 Create Timeslice from terminal:

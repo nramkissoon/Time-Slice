@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="timeslicer",
-    version="1.1.0",
+    version="1.1.1",
     author="Nicholas Ramkissoon",
     description="Package for creating timeslice images from time lapses",
     long_description=long_description,
