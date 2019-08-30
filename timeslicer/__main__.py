@@ -17,6 +17,6 @@ q = int(input("Enter output quality (1 - 100): "))
 
 
 print("")
-print("Creating timeslicer...")
+print("Creating timeslice...")
 timeslice(direc, output_path=output, skip=s, reverse=rev, qual=q)
 print("Finished.")
