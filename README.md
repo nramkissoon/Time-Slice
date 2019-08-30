@@ -16,6 +16,8 @@ Create Timeslice from terminal:
 python3 -m timeslicer
 ```
 
+You will then be prompted by the terminal to enter information necessary to create tome slice.
+
 ## Sample Output Images
 
 ### Standard Timeslice
