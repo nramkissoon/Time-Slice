@@ -6,8 +6,7 @@ import random
 from PIL import Image
 
 
-def timeslice(image_folder: str, output_path: str, skip=0, reverse=False, randomize=False, qual=95):
-
+def timeslice(image_folder: str, output_path: str, skip=1, reverse=False, randomize=False, qual=95):
     try:
         num_photos = math.floor(len([im for im in os.listdir(image_folder)]) / skip)
     except FileNotFoundError:
@@ -31,20 +30,28 @@ def timeslice(image_folder: str, output_path: str, skip=0, reverse=False, random
                 yield photo
             c += 1
 
-    photo_list = image_gen(skip)
-    slices = []
-    for i in range(num_photos):
-        im = photo_list.__next__()
-        left = i * slice_width
-        right = left + slice_width
-        sliced = im.crop((left, 0, right, image_height))
-        slices.append(sliced)
+    photo_list = image_gen(skip) 
+    slices = [None]*num_photos
+
+    if not randomize:
+        for i in range(num_photos):
+            im = photo_list.__next__()
+            left = i * slice_width
+            right = left + slice_width
+            sliced = im.crop((left, 0, right, image_height))
+            slices[i] = sliced
+    else:
+        l = [x for x in range(num_photos)]
+        random.shuffle(l)
+        for i in l:
+            im = photo_list.__next__()
+            left = i * slice_width
+            right = left + slice_width
+            sliced = im.crop((left, 0, right, image_height))
+            slices[i] = sliced
 
     result_width = slice_width * len(slices)
     result = Image.new('RGB', (result_width, image_height))
-
-    if randomize:
-        random.shuffle(slices)
 
     for i in range(len(slices)):
         result.paste(im=slices[i], box=(slice_width * i, 0))
